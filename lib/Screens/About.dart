@@ -53,7 +53,7 @@ class AboutMe extends StatelessWidget {
               padding:
                   const EdgeInsets.symmetric(vertical: 8.0, horizontal: 10.0),
               child: Text(
-                "Hi there, I'm a developer who has some good amount of experience in several Technologies such as : \n Flutter , Node.js , Express.js , MongoDB , React.js , RestAPI , Git & GitHub, HTML, CSS, Javascript, Firebase",
+                "Hi there, I hope you liked the app. This was a small Quarantine project while being in lockdown due to Corona Virus. if you have any quiries regarding building apps then feel free to contact me.\n I would love to help you \n And yes I'm more active on instagram and Facebook",
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 15.0,
@@ -76,6 +76,7 @@ class AboutMe extends StatelessWidget {
       ),
     );
   }
+
   Widget infoList({String text, Icon icon}) {
     return (Container(
       margin: EdgeInsets.only(top: 10.0),

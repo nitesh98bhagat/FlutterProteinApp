@@ -45,14 +45,7 @@ class _DetailListPageState extends State<DetailListPage> {
             Swiper(
               itemBuilder: (BuildContext context, int index) {
                 return FoodCard(
-                  name: foodItem[index].name,
-                  type: foodItem[index].type,
-                  quantity: foodItem[index].quantity,
-                  protein: foodItem[index].protein,
-                  fat: foodItem[index].fat,
-                  calories: foodItem[index].calories,
-                  carbs: foodItem[index].carbs,
-                  color: foodItem[index].color,
+                  foodItem: foodItem[index],
                 );
               },
               itemCount: foodItem.length,

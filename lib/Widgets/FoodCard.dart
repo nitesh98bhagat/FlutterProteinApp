@@ -1,27 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:protein_food_chart/AppTheme.dart';
+import 'package:protein_food_chart/Modals/FoodItem.dart';
 import 'package:protein_food_chart/Screens/DescriptionPage.dart';
 import 'package:protein_food_chart/Widgets/ClipperClass.dart';
 
 class FoodCard extends StatelessWidget {
-  final String name;
-  final String type;
-  final String quantity;
-  final double protein;
-  final double fat;
-  final double calories;
-  final double carbs;
-  final Color color;
-
-  FoodCard(
-      {this.name,
-      this.type,
-      this.quantity,
-      this.protein,
-      this.fat,
-      this.calories,
-      this.carbs,
-      this.color});
+  final FoodItem foodItem;
+  FoodCard({this.foodItem});
 
   @override
   Widget build(BuildContext context) {
@@ -30,8 +15,8 @@ class FoodCard extends StatelessWidget {
 
     return InkWell(
       onTap: () {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (_) => DescriptionPage()));
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => DescriptionPage(foodItem)));
       },
       child: Stack(
         children: [
@@ -44,7 +29,7 @@ class FoodCard extends StatelessWidget {
               height: 50.0,
               color: Colors.black,
               child: Text(
-                name ?? "item",
+                foodItem.name ?? "item",
                 style: AppTheme.h2Text(),
               ),
             ),
@@ -58,7 +43,7 @@ class FoodCard extends StatelessWidget {
                 width: screenWidth,
                 height: 450.0,
                 decoration: BoxDecoration(
-                  color: color,
+                  color: foodItem.color,
                   borderRadius: BorderRadius.circular(15.0),
                 ),
                 child: Column(
@@ -66,7 +51,7 @@ class FoodCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Text(
-                      "$type" ?? " ",
+                      "${foodItem.type}" ?? " ",
                       style: AppTheme.h4Text(),
                     ),
                     Divider(
@@ -76,27 +61,27 @@ class FoodCard extends StatelessWidget {
                     ),
                     SizedBox(height: 3.0),
                     Text(
-                      "Quantity: $quantity" ?? " ",
+                      "Quantity: ${foodItem.quantity}" ?? " ",
                       style: AppTheme.h4Text(),
                     ),
                     SizedBox(height: 3.0),
                     Text(
-                      "Protein: $protein" ?? " ",
+                      "Protein: ${foodItem.protein}" ?? " ",
                       style: AppTheme.h4Text(),
                     ),
                     SizedBox(height: 3.0),
                     Text(
-                      "Fat: $fat g" ?? " ",
+                      "Fat: ${foodItem.fat} g" ?? " ",
                       style: AppTheme.h4Text(),
                     ),
                     SizedBox(height: 3.0),
                     Text(
-                      "Carbs: $carbs g" ?? " ",
+                      "Carbs: ${foodItem.carbs} g" ?? " ",
                       style: AppTheme.h4Text(),
                     ),
                     SizedBox(height: 3.0),
                     Text(
-                      "Calories: $calories" ?? " ",
+                      "Calories: ${foodItem.calories}" ?? " ",
                       style: AppTheme.h4Text(),
                     ),
                     Padding(
