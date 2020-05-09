@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:protein_food_chart/AppTheme.dart';
+import 'package:protein_food_chart/Modals/FoodItem.dart';
+import 'package:protein_food_chart/Screens/About.dart';
+import 'package:protein_food_chart/Widgets/FoodCard.dart';
 
 class DetailListPage extends StatefulWidget {
-  final data;
-
-  DetailListPage({this.data});
   @override
   _DetailListPageState createState() => _DetailListPageState();
 }
@@ -13,58 +14,59 @@ class DetailListPage extends StatefulWidget {
 class _DetailListPageState extends State<DetailListPage> {
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
         title: Text(
-          widget.data,
-          style: AppTheme.h3Text(size: 30.0),
+          "Protein Chart",
+          style: AppTheme.h3Text(size: 25.0),
         ),
-      ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          Text(
-            widget.data,
-            style: AppTheme.h2Text(),
-          ),
-          Container(
-            height: MediaQuery.of(context).size.height * 0.6,
-            child: Swiper(
-              itemBuilder: (BuildContext context, int index) {
-                return foodCard();
-              },
-              itemCount: 10,
-              viewportFraction: 0.8,
-              scale: 0.9,
+        centerTitle: true,
+        actions: [
+          IconButton(
+            icon: Icon(
+              FontAwesomeIcons.infoCircle,
+              color: Colors.white,
+              size: 28.0,
             ),
+            onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (_) => AboutMe()));
+            },
           ),
-          Text(
-            "<<   Swipe   >>",
-            style: TextStyle(color: Colors.white),
-          )
+          SizedBox(width: 10.0),
         ],
       ),
-    );
-  }
-
-  Widget foodCard() {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.orange,
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(185.0),
-          topRight: Radius.circular(15.0),
-          bottomRight: Radius.circular(15.0),
-          bottomLeft: Radius.circular(15.0),
+      body: SafeArea(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Swiper(
+              itemBuilder: (BuildContext context, int index) {
+                return FoodCard(
+                  name: foodItem[index].name,
+                  type: foodItem[index].type,
+                  quantity: foodItem[index].quantity,
+                  protein: foodItem[index].protein,
+                  fat: foodItem[index].fat,
+                  calories: foodItem[index].calories,
+                  carbs: foodItem[index].carbs,
+                  color: foodItem[index].color,
+                );
+              },
+              itemCount: foodItem.length,
+              itemWidth: screenWidth,
+              itemHeight: 600.0,
+              layout: SwiperLayout.TINDER,
+            ),
+            Text(
+              "<<   Swipe   >>",
+              style: TextStyle(color: Colors.white),
+            )
+          ],
         ),
       ),
-      child: Text("data"),
     );
   }
 }
