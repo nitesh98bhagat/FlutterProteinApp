@@ -15,7 +15,6 @@ class _DetailListPageState extends State<DetailListPage> {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
-
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -38,16 +37,13 @@ class _DetailListPageState extends State<DetailListPage> {
           SizedBox(width: 10.0),
         ],
       ),
-      body: SafeArea(
+      body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Swiper(
-              itemBuilder: (BuildContext context, int index) {
-                return FoodCard(
-                  foodItem: foodItem[index],
-                );
-              },
+              itemBuilder: (BuildContext context, int index) =>
+                  FoodCard(foodItem: foodItem[index]),
               itemCount: foodItem.length,
               itemWidth: screenWidth,
               itemHeight: 600.0,
