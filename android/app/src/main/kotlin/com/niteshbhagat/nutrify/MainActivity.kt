@@ -1,4 +1,4 @@
-package com.example.protein_food_chart
+package com.niteshbhagat.nutrify
 
 import io.flutter.embedding.android.FlutterActivity
 

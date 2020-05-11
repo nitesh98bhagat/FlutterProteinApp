@@ -39,7 +39,7 @@ class _DetailListPageState extends State<DetailListPage> {
       ),
       body: SingleChildScrollView(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Swiper(
               itemBuilder: (BuildContext context, int index) =>
@@ -49,6 +49,7 @@ class _DetailListPageState extends State<DetailListPage> {
               itemHeight: 600.0,
               layout: SwiperLayout.TINDER,
             ),
+            SizedBox(height: 25.0),
             Text(
               "<<   Swipe   >>",
               style: TextStyle(color: Colors.white),

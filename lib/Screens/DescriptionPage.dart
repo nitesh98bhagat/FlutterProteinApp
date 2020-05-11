@@ -21,7 +21,11 @@ class DescriptionPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(width: double.infinity),
-              CircleAvatar(radius: 55.0),
+              Container(
+                width: 250.0,
+                height: 250.0,
+                child: Image.asset(foodItem.image),
+              ),
               Padding(
                 padding: const EdgeInsets.all(18.0),
                 child: Text(

@@ -10,7 +10,6 @@ class FoodCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenHeight = MediaQuery.of(context).size.height;
     final screenWidth = MediaQuery.of(context).size.width;
 
     return InkWell(
@@ -21,18 +20,14 @@ class FoodCard extends StatelessWidget {
       child: Stack(
         children: [
           Container(
-            padding: EdgeInsets.all(15.0),
-            width: screenWidth,
-            height: screenHeight * 0.99,
-            child: Container(
-              width: 250.0,
-              height: 50.0,
+              width: 350.0,
+              height: 250.0,
               color: Colors.black,
               child: Text(
                 foodItem.name ?? "item",
                 style: AppTheme.h2Text(),
               ),
-            ),
+            
           ),
           Align(
             alignment: Alignment.bottomCenter,
@@ -98,11 +93,14 @@ class FoodCard extends StatelessWidget {
             ),
           ),
           Align(
-            alignment: Alignment(0.8, -0.3),
-            child: CircleAvatar(
-              radius: 85.0,
+            alignment: Alignment(0.9, -0.55),
+            child: Container(
+              width: 250.0,
+              height: 250.0,
+              child: Image.asset(foodItem.image),
             ),
           ),
+          
         ],
       ),
     );
