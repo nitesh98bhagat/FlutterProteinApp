@@ -12,9 +12,10 @@ class DescriptionPage extends StatelessWidget {
         backgroundColor: foodItem.color,
         title: Text(foodItem.name),
         elevation: 0.0,
+        
       ),
       body: Container(
-        color: foodItem.color,
+        color: Colors.white,
         height: MediaQuery.of(context).size.height,
         child: SingleChildScrollView(
           child: Column(
@@ -27,10 +28,10 @@ class DescriptionPage extends StatelessWidget {
                 child: Image.asset(foodItem.image),
               ),
               Padding(
-                padding: const EdgeInsets.all(18.0),
+                padding: const EdgeInsets.symmetric(horizontal: 25.0),
                 child: Text(
                   foodItem.desc,
-                  style: AppTheme.h4Text(size: 23.0),
+                  style: AppTheme.h4Text(size: 23.0, color: Colors.black54),
                 ),
               )
             ],

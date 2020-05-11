@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:protein_food_chart/Screens/DetailListPage.dart';
+import 'package:flutter/services.dart';
 
-void main() {
+Future<void> main() async {
+  SystemChrome.setSystemUIOverlayStyle(
+    SystemUiOverlayStyle(
+        systemNavigationBarColor: Colors.black,
+        ),
+  );
+
   runApp(MyApp());
 }
 

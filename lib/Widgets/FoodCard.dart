@@ -97,7 +97,7 @@ class FoodCard extends StatelessWidget {
             child: Container(
               width: 250.0,
               height: 250.0,
-              child: Image.asset(foodItem.image),
+              child: Image.asset(foodItem.image)??Text("Failed to load thee image"),
             ),
           ),
           
