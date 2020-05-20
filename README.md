@@ -10,6 +10,9 @@ And yes I'm open to suggestion feel free to give it.
 
 ## My Social Media Handles
 
-instagram: _nitesh_bhagat_
-facebook: facebook.com/nitesh.bhagat.775
-twitter: @myself_nitesh
+instagram: https://www.instagram.com/_nitesh_bhagat_/
+
+
+facebook: https://www.facebook.com/nitesh.bhagat.775
+
+twitter: https://twitter.com/myself_nitesh
