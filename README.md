@@ -1,16 +1,15 @@
 # protein_food_chart
 
-A new Flutter project.
+Protein Food Chart App made with Flutter
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+So guys, this is a small Flutter project, where I tried to make a production ready Flutter app. Feel Free to fork this repo.
+If you liked the project please please Pleaseeeeeeeee star this repo so that it inspire me to make more such projects.
+And yes I'm open to suggestion feel free to give it.
 
-A few resources to get you started if this is your first Flutter project:
+## My Social Media Handles
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+instagram: _nitesh_bhagat_
+facebook: facebook.com/nitesh.bhagat.775
+twitter: @myself_nitesh
